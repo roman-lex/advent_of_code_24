@@ -1,7 +1,3 @@
 fn main() {
-    print
-}
-
-fn day1(input){
-
+    println!("Hello World");
 }
