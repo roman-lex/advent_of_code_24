@@ -5,14 +5,11 @@ fn main(){
     day1();
     println!("Day 2:");
     day2();
+    println!("Day 3:");
+    day3();
 }
 
-fn getInput(file:String) -> String{
-    let file_path = String::from(file);
-    let contents = fs::read_to_string(file_path)
-        .expect("Should have been able to read the file");
-    contents
-}
+
 
 fn day1(){
     let mut v: Vec<i32> = Vec::new();
@@ -51,6 +48,15 @@ fn day1(){
     println!("- Part 2: {}", sum2)
 }
 
+fn getInput(file:String) -> String{
+    let file_path = String::from(file);
+    let contents = fs::read_to_string(file_path)
+        .expect("Should have been able to read the file");
+    contents
+}
+
+
+
 fn day2(){
     let file = String::from("input_day2_1.txt");
     let input = getInput(file);
@@ -81,4 +87,11 @@ fn isSave(v: Vec<i32>) -> bool {
         }
     }
     true
+}
+
+
+
+fn day3() {
+    println!("- Part 1: not implemented yet");
+    println!("- Part 2: not implemented yet");
 }
