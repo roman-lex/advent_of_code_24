@@ -52,7 +52,6 @@ fn day2(){
     let file = String::from("input_day2_1.txt");
     let input = getInput(file);
     let mut cntSave = 0;
-    let mut cntUnsave = 0;
     for i in input.lines(){
         let nums: Vec<&str> = i.trim().split(" ").collect();
         let mut v : Vec<i32> = Vec::new();
@@ -62,21 +61,20 @@ fn day2(){
         }
         if isSave(v) == true{
             cntSave += 1;
-        } else {
-            cntUnsave += 1;
         }
     }
     println!("{}", cntSave);
 }
 
-fn isSave(v:Vec<i32>) -> bool {
-    let mut save = true;
-    let mut vorher = v[0];
-    for (i, elem) in v.iter().enumerate(){
-        if vorher + 3 < *elem {
-            save = false;
+fn isSave(v: Vec<i32>) -> bool {
+    let dir = v[0] < v[1];
+
+    for i in 0..v.len() - 1 {
+        let currDir = v[i] < v[i + 1];
+        let diff = (v[i] as i16 - v[i + 1] as i16).abs();
+        if currDir != dir || diff > 3 || diff < 1 {
+            return false;
         }
-        vorher = *elem;
     }
-    save
+    true
 }
