@@ -1,6 +1,9 @@
 use std::fs;
+
 fn main(){
-    //day1();
+    println!("Day 1:");
+    day1();
+    println!("Day 2:");
     day2();
 }
 
@@ -44,8 +47,8 @@ fn day1(){
         }
         sum2 += elem*cnt;
     }
-    println!("Part 1: {}", sum);
-    println!("Part 2: {}", sum2)
+    println!("- Part 1: {}", sum);
+    println!("- Part 2: {}", sum2)
 }
 
 fn day2(){
@@ -63,7 +66,8 @@ fn day2(){
             cntSave += 1;
         }
     }
-    println!("{}", cntSave);
+    println!("- Part 1: {}", cntSave);
+    println!("- Part 2: not implemented yet");
 }
 
 fn isSave(v: Vec<i32>) -> bool {
