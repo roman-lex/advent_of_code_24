@@ -73,11 +73,13 @@ fn day2(){
         }
     }
     println!("- Part 1: {}", cntSave);
-    println!("- Part 2: not implemented yet");
+    println!("- Part 2: {}", cntSave);
 }
 
 fn isSave(v: Vec<i32>) -> bool {
     let dir = v[0] < v[1];
+    let mut isSave = true;
+    let mut fCnt = 0;
 
     for i in 0..v.len() - 1 {
         let currDir = v[i] < v[i + 1];
@@ -87,6 +89,19 @@ fn isSave(v: Vec<i32>) -> bool {
         }
     }
     true
+    
+    //for i in 0..v.len() -1 {
+    //    let currDir = v[i] < v[i+1];
+    //    let diff = (v[i] as i16 - v[i+1] as i16).abs();
+    //    if currDir != dir || diff > 3 || diff < 1 {
+    //        isSave = false;
+    //        fCnt += 1;
+    //    }
+    //}
+    //if fCnt <= 1 {
+    //    isSave = true;
+    //}
+    //isSave
 }
 
 
