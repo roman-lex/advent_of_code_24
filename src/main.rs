@@ -80,28 +80,47 @@ fn isSave(v: Vec<i32>) -> bool {
     let dir = v[0] < v[1];
     let mut isSave = true;
     let mut fCnt = 0;
+    let mut testVec : Vec<i32> = Vec::new();
+    testVec = v.clone();
+    
+    // Part 1:
+    //for i in 0..v.len() - 1 {
+    //    let currDir = v[i] < v[i + 1];
+    //    let diff = (v[i] as i16 - v[i + 1] as i16).abs();
+    //    if currDir != dir || diff > 3 || diff < 1 {
+    //        return false;
+    //    }
+    //}
+    //true
+    
 
+    // Part 2:
+    for i in 0..v.len() -1 {
+        let currDir = v[i] < v[i+1];
+        let diff = (v[i] as i16 - v[i+1] as i16).abs();
+        if currDir != dir || diff > 3 || diff < 1 {
+            isSave = false;
+        }
+    }
+    if isSave == false {
+        for i in 0..v.len() -1 {            
+            testVec.remove(i);
+            if     
+        }    
+    }
+    isSave
+}
+
+fn checkSave(v:Vec<i32>) -> bool {
     for i in 0..v.len() - 1 {
         let currDir = v[i] < v[i + 1];
         let diff = (v[i] as i16 - v[i + 1] as i16).abs();
         if currDir != dir || diff > 3 || diff < 1 {
             return false;
         }
-    }
-    true
-    
-    //for i in 0..v.len() -1 {
-    //    let currDir = v[i] < v[i+1];
-    //    let diff = (v[i] as i16 - v[i+1] as i16).abs();
-    //    if currDir != dir || diff > 3 || diff < 1 {
-    //        isSave = false;
-    //        fCnt += 1;
-    //    }
-    //}
-    //if fCnt <= 1 {
-    //    isSave = true;
-    //}
-    //isSave
+        //}
+        //true
+        
 }
 
 
